@@ -1,7 +1,8 @@
 import merge from 'deepmerge';
+import logger from './logger';
 
-export function log(obj: any): void {
-	console.log(obj);
+export function log(obj: any, category: string = 'general', level: string = 'info'): void {
+	logger.write(obj, category, level);
 }
 
 export function list_remove(item: any, list: any[]): any[] {
